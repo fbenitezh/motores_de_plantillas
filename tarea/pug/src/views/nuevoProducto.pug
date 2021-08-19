@@ -1,0 +1,22 @@
+include layouts/index.pug
+div(class="container")
+    h1="Ingrese Producto"
+    form(action="/productos" class="form-group" method="POST")
+        div(class="row")
+            div(class="col-12 col-md-6 my-2")
+                div(class="input-group")
+                    div(class="input-group-prepend")
+                        div(class="input-group-text")="Producto"
+                    input(type="text" name="name" id="name" class="form-control" placeholder="Nombre del producto")
+            div(class="col-12 col-md-6 my-2")
+                div(class="input-group")
+                    div(class="input-group-prepend")
+                        div(class="input-group-text")="Precio"
+                    input(type="number" step="any" name="price" id="price" class="form-control" placeholder="Precio del producto")
+            div(class="col-12 my-2")
+                div(class="input-group")
+                    div(class="input-group-prepend")
+                        div(class="input-group-text")="Foto URL"
+                    input(type="text" name="photo" id="photo" class="form-control" placeholder="URL")
+            div(class="col-12 text-center my-2")
+                input(type="submit" class="btn btn-primary" value="Guardar producto")

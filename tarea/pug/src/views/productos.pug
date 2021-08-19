@@ -1,0 +1,16 @@
+include layouts/index.pug
+div(class="container pt-4")
+    h1="Productos cargados"
+
+    div(class="row")
+        if productos.length
+            each producto in productos
+                div(class="col-12 col-md-4 my-2")
+                    div(class="card w-100")
+                        img(src=producto.thumbnail class="card-img-top" alt=producto.name)
+                        div(class="card-body")
+                            h5(class="card-title")=producto.name
+                            p(class="card-text")=producto.price
+        else
+            div(class="col-12")
+                div(class="alert alert-warning text-center")="No se encontraron productos"
