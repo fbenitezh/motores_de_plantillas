@@ -1,25 +1,31 @@
 <div class="container pt-4">
-    <h1>Productos cargados</h1>
+  <h1>Productos cargados</h1>
 
-    <div class="row">
-        {{#if productos.length }}
-            {{#each productos}}
-                <div class="col-12 col-md-4 my-2">
-                    <div class="card w-100">
-                        <img src={{thumbnail}} class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{name}}</h5>
-                            <p class="card-text">{{price}}</p>
-                        </div>
-                    </div>
-                </div>
-            {{/each}}
-        {{else}}
-            <div class="col-12">
-                <div class="alert alert-warning text-center">No se encontraron productos</div>
-            </div> 
-        {{/if}}
-    </div>
-
+  <div class="row">
+    {{#if productos.length}}
+      <table class="table col-12">
+        <thead>
+          <tr class="text-center">
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Foto</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each productos}}
+            <tr class="text-center">
+              <th scope="row">{{price}}</th>
+              <td>{{name}}</td>
+              <td><img src={{thumbnail}} width="35px" alt={{name}} /></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      <div class="col-12">
+        <div class="alert alert-warning text-center">No se encontraron productos</div>
+      </div>
+    {{/if}}
+  </div>
 
 </div>

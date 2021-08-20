@@ -26,9 +26,10 @@ class Contenedor {
         this.nameFile,
         JSON.stringify(array, null, 2)
       );
-      console.log(`subido el producto ${data.title}`);
+      console.log(`subido el producto ${data.name}`);
       return data.id;
     } catch (error) {
+      console.log(error);
       throw new Error(error);
     }
   }

@@ -23,13 +23,16 @@ app.set("view engine", "hbs");
 app.use("/", express.static("../public"));
 
 app.get("/", (req, res) => {
-  res.render("nuevoProducto");
+  res.render("nuevoProducto",{
+    solapaNombre:'Nuevo producto'
+  });
 });
 
 app.get("/productos", async (req, res) => {
   const productos = await contenedor.getAll();
   res.render("productos", {
     productos,
+    solapaNombre:"Listado de productos"
   });
 });
 

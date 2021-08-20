@@ -3,26 +3,35 @@
   <h1>Productos cargados</h1>
 
   <div class="row">
-    <% if (productos.length){ %> <% productos.forEach(function(producto){ %>
-    <div class="col-12 col-md-4 my-2">
-      <div class="card w-100">
-        <img
-          src="<%= producto.thumbnail %>"
-          class="card-img-top"
-          alt="<%= producto.name %>"
-        />
-        <div class="card-body">
-          <h5 class="card-title"><%= producto.name %></h5>
-          <p class="card-text"><%= producto.price %></p>
+    <% if (productos.length){ %> 
+    <table class="table col-12">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Foto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% productos.forEach(function(producto){ %>
+          <tr class="text-center">
+            <th scope="row"><%= producto.name %></th>
+            <td><%= producto.price %></td>
+            <td><img
+              src="<%= producto.thumbnail %>"
+              width="35px"
+              alt="<%= producto.name %>"
+            /></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else{%>
+      <div class="col-12">
+        <div class="alert alert-warning text-center">
+          No se encontraron productos
         </div>
       </div>
-    </div>
-    <% }); %> <% } else{%>
-    <div class="col-12">
-      <div class="alert alert-warning text-center">
-        No se encontraron productos
-      </div>
-    </div>
     <% } %>
   </div>
 </div>
