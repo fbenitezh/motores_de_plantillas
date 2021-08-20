@@ -1,0 +1,56 @@
+<%- include('../partials/base') %>
+<div class="container jumbotrom">
+  <h1>Ingrese Producto</h1>
+  <form action="/productos" class="form-group" method="POST">
+    <div class="row">
+      <div class="col-12 col-md-6 my-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Producto</div>
+          </div>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="Nombre del producto"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-md-6 my-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Precio</div>
+          </div>
+          <input
+            type="number"
+            step="any"
+            name="price"
+            id="price"
+            class="form-control"
+            placeholder="Precio del producto"
+          />
+        </div>
+      </div>
+      <div class="col-12 my-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Foto URL</div>
+          </div>
+          <input
+            type="text"
+            name="photo"
+            id="photo"
+            class="form-control"
+            placeholder="URL"
+          />
+        </div>
+      </div>
+      <div class="col-12 text-center my-2">
+        <input type="submit" class="btn btn-primary" value="Guardar producto" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/footer') %>
